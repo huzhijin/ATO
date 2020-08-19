@@ -126,7 +126,6 @@
         <dependency>
             <groupId>com.yonyou.cloud</groupId>
             <artifactId>yonscript-mdf</artifactId>
-            <version>${yonscript-mdf-runtime.version}</version>
             <exclusions>
                 <exclusion>
                     <groupId>*</groupId>

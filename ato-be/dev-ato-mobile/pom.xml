@@ -236,7 +236,22 @@
             <artifactId>guava</artifactId>
             <version>20.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.yonyou</groupId>
+            <artifactId>mdd-default-rules</artifactId>
+            <version>${mdd.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.imeta</groupId>
+            <artifactId>imeta-orm</artifactId>
+            <version>${imeta.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
     </dependencies>
+
 
 
 </project>

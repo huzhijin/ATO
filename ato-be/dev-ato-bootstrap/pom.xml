@@ -95,7 +95,7 @@
         <dependency>
             <artifactId>yonyou-mdf-sdk</artifactId>
             <groupId>com.yonyou.ucf.mdf</groupId>
-            <version>4.1.0-SNAPSHOT</version>
+            <version>4.1.0-RELEASE</version>
         </dependency>
 
         <dependency>
@@ -563,7 +563,19 @@
             <artifactId>guava</artifactId>
             <version>20.0</version>
         </dependency>
-<!--        <dependency>  报错太多 先忽略-->
+        <dependency>
+            <groupId>org.imeta</groupId>
+            <artifactId>imeta-orm</artifactId>
+            <version>2.0.22-SNAPSHOT</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.imeta</groupId>
+            <artifactId>imeta-orm</artifactId>
+            <version>2.0.22-SNAPSHOT</version>
+            <scope>test</scope>
+        </dependency>
+        <!--        <dependency>  报错太多 先忽略-->
 <!--            <groupId>com.yonyou.iuap</groupId>-->
 <!--            <artifactId>iuap-billcode-mdd</artifactId>-->
 <!--        </dependency>-->
@@ -610,36 +622,36 @@
             </activation>
         </profile>
 
-        <profile>
-            <id>linux</id>
-            <dependencies>
-                <dependency>
-                    <groupId>com.eclipsesource.j2v8</groupId>
-                    <artifactId>j2v8_linux_x86_64</artifactId>
-                    <version>5.1.0-SNAPSHOT</version>
-                </dependency>
-            </dependencies>
-            <activation>
-                <os>
-                    <family>linux</family>
-                </os>
-            </activation>
-        </profile>
+<!--        <profile>-->
+<!--            <id>linux</id>-->
+<!--            <dependencies>-->
+<!--                <dependency>-->
+<!--                    <groupId>com.eclipsesource.j2v8</groupId>-->
+<!--                    <artifactId>j2v8_linux_x86_64</artifactId>-->
+<!--                    <version>5.1.0-SNAPSHOT</version>-->
+<!--                </dependency>-->
+<!--            </dependencies>-->
+<!--            <activation>-->
+<!--                <os>-->
+<!--                    <family>linux</family>-->
+<!--                </os>-->
+<!--            </activation>-->
+<!--        </profile>-->
 
-        <profile>
-            <id>mac</id>
-            <dependencies>
-                <dependency>
-                    <groupId>com.eclipsesource.j2v8</groupId>
-                    <artifactId>j2v8_macos_x86_64</artifactId>
-                    <version>5.1.0-SNAPSHOT</version>
-                </dependency>
-            </dependencies>
-            <activation>
-                <os>
-                    <family>mac</family>
-                </os>
-            </activation>
-        </profile>
+<!--        <profile>-->
+<!--            <id>mac</id>-->
+<!--            <dependencies>-->
+<!--                <dependency>-->
+<!--                    <groupId>com.eclipsesource.j2v8</groupId>-->
+<!--                    <artifactId>j2v8_macos_x86_64</artifactId>-->
+<!--                    <version>5.1.0-SNAPSHOT</version>-->
+<!--                </dependency>-->
+<!--            </dependencies>-->
+<!--            <activation>-->
+<!--                <os>-->
+<!--                    <family>mac</family>-->
+<!--                </os>-->
+<!--            </activation>-->
+<!--        </profile>-->
     </profiles>
 </project>

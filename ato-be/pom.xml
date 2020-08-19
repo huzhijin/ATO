@@ -26,28 +26,27 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <imeta.groupId>org.imeta</imeta.groupId>
         <ucf-mdf.version>1.0-SNAPSHOT</ucf-mdf.version>
-        <imeta.version>2.0.24-SNAPSHOT</imeta.version>
-        <mdd.version>3.0.2-SNAPSHOT</mdd.version>
-        <diwork.version>4.0.6-SNAPSHOT</diwork.version>
+        <imeta.version>2.0.22.1-RELEASE</imeta.version>
+        <mdd.version>3.0.2-RELEASE</mdd.version>
+        <diwork.version>4.0.7-RELEASE</diwork.version>
+        <diwork-sdk-eucsupport>4.0.7-RELEASE</diwork-sdk-eucsupport>
         <mwclient.version>5.2.4-RELEASE</mwclient.version>
         <iris.version>5.2.4-RELEASE</iris.version>
-        <ucf.version>1.0.6-SNAPSHOT</ucf.version>
+        <ucf.version>1.0.6-RELEASE</ucf.version>
         <graphql.version>5.0.0-SNAPSHOT</graphql.version>
-        <yonscript.version>1.0.5-SNAPSHOT</yonscript.version>
-        <yonscript-mdf-runtime.version>3.0.2-RELEASE</yonscript-mdf-runtime.version>
-        <inotify-sdk.version>5.3.1-SNAPSHOT</inotify-sdk.version>
-        <bizFlow-runtime.version>1.0.0-SNAPSHOT</bizFlow-runtime.version>
-        <cglib.version>3.1</cglib.version>
+        <yonscript.version>3.0.3-RELEASE</yonscript.version>
+        <engine.version>3.0.4-RELEASE</engine.version>
         <yonyou-metadata-common.version>0.0.2-RELEASE</yonyou-metadata-common.version>
 
         <!-- iuap公共组件依赖版本 -->
-        <metadata-api-unified-sdk.version>0.0.20-SNAPSHOT</metadata-api-unified-sdk.version>
+        <metadata-api-unified-sdk.version>0.0.21.1-RELEASE</metadata-api-unified-sdk.version>
         <iuap-tenant-cas.version>4.0.2-release</iuap-tenant-cas.version>
-        <iuap-bd-translation-sdk.version>2.1.0-SNAPSHOT</iuap-bd-translation-sdk.version>
-        <mdf-uitemplate.version>1.0.1-SNAPSHOT</mdf-uitemplate.version>
-        <iuap-billcode.version>2.3.1-SNAPSHOT</iuap-billcode.version>
+        <iuap-billcode.version>2.3.1-RELEASE</iuap-billcode.version>
         <iuap-saas-dynamicds.version>3.1.0-RC001</iuap-saas-dynamicds.version>
-        <print.client.version>2.0.0-SNAPSHOT</print.client.version>
+        <print.client.version>2.0.0-RELEASE</print.client.version>
+        <cglib.version>3.1</cglib.version>
+        <bizFlow-runtime.version>1.0.0-SNAPSHOT</bizFlow-runtime.version>
+
     </properties>
 
     <dependencyManagement>
@@ -63,42 +62,85 @@
                 <artifactId>iuap-billcode-mdd</artifactId>
                 <version>${iuap-billcode.version}</version>
             </dependency>
+            <!-- mdd 全部jar -->
             <dependency>
                 <groupId>com.yonyou</groupId>
-                <artifactId>mdd-web</artifactId>
+                <artifactId>mdd-default-rules</artifactId>
                 <version>${mdd.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <artifactId>slf4j-log4j12</artifactId>
-                        <groupId>org.slf4j</groupId>
-                    </exclusion>
-                    <exclusion>
-                        <artifactId>ucf-log</artifactId>
-                        <groupId>com.yonyou.iuap</groupId>
-                    </exclusion>
-                    <exclusion>
-                        <artifactId>uretail-common</artifactId>
-                        <groupId>com.yonyoucloud</groupId>
-                    </exclusion>
-                    <exclusion>
-                        <artifactId>mdd-ext-*</artifactId>
-                        <groupId>com.yonyou</groupId>
-                    </exclusion>
-                    <exclusion>
-                        <artifactId>com.yonyou</artifactId>
-                        <groupId>scheduler-api</groupId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>com.yonyou.iuap</groupId>
-                        <artifactId>bPaaS_formula</artifactId>
-                    </exclusion>
-
-                    <exclusion>
-                        <groupId>*</groupId>
-                        <artifactId>mdd-ext-common-dubbo</artifactId>
-                    </exclusion>
-                </exclusions>
             </dependency>
+
+            <dependency>
+                <groupId>com.yonyou</groupId>
+                <artifactId>mdd-common</artifactId>
+                <version>${mdd.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.yonyou</groupId>
+                <artifactId>mdd-api</artifactId>
+                <version>${mdd.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.yonyou</groupId>
+                <artifactId>mdd-core</artifactId>
+                <version>${mdd.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.yonyou</groupId>
+                <artifactId>mdd-permission</artifactId>
+                <version>${mdd.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.yonyou</groupId>
+                <artifactId>mdd-bpm</artifactId>
+                <version>${mdd.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.yonyou</groupId>
+                <artifactId>mdd-enum</artifactId>
+                <version>${mdd.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.yonyou</groupId>
+                <artifactId>mdd-ref</artifactId>
+                <version>${mdd.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.yonyou</groupId>
+                <artifactId>mdd-ref-api</artifactId>
+                <version>${mdd.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.yonyou</groupId>
+                <artifactId>mdd-rule-sdk</artifactId>
+                <version>${mdd.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.yonyou</groupId>
+                <artifactId>mdd-uimeta-sdk</artifactId>
+                <version>${mdd.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.yonyou</groupId>
+                <artifactId>mdd-design</artifactId>
+                <version>${mdd.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.yonyou</groupId>
+                <artifactId>mdd-userdefine</artifactId>
+                <version>${mdd.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>com.yonyou</groupId>
                 <artifactId>mdd-dao</artifactId>
@@ -106,12 +148,25 @@
             </dependency>
             <dependency>
                 <groupId>com.yonyou</groupId>
-                <artifactId>mdd-bpm</artifactId>
+                <artifactId>mdd-option</artifactId>
                 <version>${mdd.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.yonyou</groupId>
+                <artifactId>mdd-uretail-common</artifactId>
+                <version>${mdd.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>com.yonyou</groupId>
                 <artifactId>mdd-print</artifactId>
+                <version>${mdd.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.yonyou</groupId>
+                <artifactId>mdd-poi</artifactId>
                 <version>${mdd.version}</version>
             </dependency>
             <dependency>
@@ -130,24 +185,20 @@
             <!-- yon script host-->
             <dependency>
                 <groupId>com.yonyou.cloud</groupId>
-                <artifactId>yonscript-engine</artifactId>
+                <artifactId>yonscript-mdf</artifactId>
                 <version>${yonscript.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.yonyou.cloud</groupId>
-                <artifactId>yonscript-mdf</artifactId>
-                <version>${yonscript-mdf-runtime.version}</version>
+                <artifactId>yonscript-engine</artifactId>
+                <version>${engine.version}</version>
             </dependency>
-            <dependency>
-                <groupId>com.yonyou.cloud</groupId>
-                <artifactId>inotify-sdk</artifactId>
-                <version>${inotify-sdk.version}</version>
-            </dependency>
+
             <!-- diwork -->
             <dependency>
                 <groupId>com.yonyou.diwork</groupId>
                 <artifactId>diwork-sdk-eucsupport</artifactId>
-                <version>${diwork.version}</version>
+                <version>${diwork-sdk-eucsupport}</version>
             </dependency>
             <dependency>
                 <groupId>com.yonyou.diwork</groupId>
@@ -217,11 +268,7 @@
                 <artifactId>auth-sdk-client</artifactId>
                 <version>3.5.2-RELEASE</version>
             </dependency>
-            <dependency>
-                <groupId>com.yonyou.cloud.mdf</groupId>
-                <artifactId>mdf-common-web</artifactId>
-                <version>${mdd.version}</version>
-            </dependency>
+
             <dependency>
                 <groupId>com.yonyou.iuap</groupId>
                 <artifactId>bPaaS_formula</artifactId>
@@ -271,17 +318,58 @@
                 </exclusions>
             </dependency>
 
+            <dependency>
+                <groupId>com.yonyou</groupId>
+                <artifactId>mdd-web</artifactId>
+                <version>${mdd.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>slf4j-log4j12</artifactId>
+                        <groupId>org.slf4j</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>ucf-log</artifactId>
+                        <groupId>com.yonyou.iuap</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>uretail-common</artifactId>
+                        <groupId>com.yonyoucloud</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>mdd-ext-*</artifactId>
+                        <groupId>com.yonyou</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>com.yonyou</artifactId>
+                        <groupId>scheduler-api</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.yonyou.iuap</groupId>
+                        <artifactId>bPaaS_formula</artifactId>
+                    </exclusion>
+
+                    <exclusion>
+                        <groupId>*</groupId>
+                        <artifactId>mdd-ext-common-dubbo</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
             <!--yht token-->
             <dependency>
                 <groupId>com.yonyou.iuap</groupId>
                 <artifactId>iuap-tenant-cas</artifactId>
                 <version>${iuap-tenant-cas.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>cglib</groupId>
                 <artifactId>cglib</artifactId>
                 <version>${cglib.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>2.9.4-RELEASE</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
